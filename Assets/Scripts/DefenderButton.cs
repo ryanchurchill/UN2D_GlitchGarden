@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DefenderButton : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] Defender defenderPrefab;
+
     bool isSelected = false;
 
     private void Start()
@@ -19,6 +20,7 @@ public class DefenderButton : MonoBehaviour
         // select this button only
         isSelected = true;
         updateColorBasedOnIsSelected();
+        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
     }
 
     private void unselectAllButtons()
