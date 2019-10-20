@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
         if (collidingObjectHealth)
         {
             collidingObjectHealth.DealDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
