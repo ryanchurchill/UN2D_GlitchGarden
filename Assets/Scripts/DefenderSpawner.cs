@@ -33,6 +33,7 @@ public class DefenderSpawner : MonoBehaviour
     private void SpawnDefender(Vector2 SpawnLocation)
     {
         Defender newDefender = Instantiate(defenderPrefab, SpawnLocation, Quaternion.identity) as Defender;
+        newDefender.SetLaneNumber((int)SpawnLocation.y);
     }
 
     private void AttemptToPlaceDefenderAt(Vector2 gridPos)

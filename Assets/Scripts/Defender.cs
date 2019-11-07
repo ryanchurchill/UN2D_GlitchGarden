@@ -5,6 +5,7 @@ using UnityEngine;
 public class Defender : MonoBehaviour
 {
     [SerializeField] int starCost = 100;
+    [SerializeField] int laneNumber;
 
     public void AddStars(int numStars)
     {
@@ -14,5 +15,15 @@ public class Defender : MonoBehaviour
     public int GetStarCost()
     {
         return starCost;
+    }
+
+    public void SetLaneNumber(int _laneNumber)
+    {
+        laneNumber = _laneNumber;
+    }
+
+    public int GetLaneNumber()
+    {
+        return laneNumber;
     }
 }

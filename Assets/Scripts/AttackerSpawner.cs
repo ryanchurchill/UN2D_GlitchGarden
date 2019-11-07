@@ -7,6 +7,7 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] float minSpawnDelay = 1;
     [SerializeField] float maxSpawnDelay = 5;
     [SerializeField] Attacker attackerPrefab;
+    [SerializeField] int laneNumber;
 
     bool spawning = true;
 
@@ -30,5 +31,10 @@ public class AttackerSpawner : MonoBehaviour
     {
         Attacker attacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
         attacker.transform.parent = transform;
+    }
+
+    public int GetLaneNumber()
+    {
+        return laneNumber;
     }
 }
