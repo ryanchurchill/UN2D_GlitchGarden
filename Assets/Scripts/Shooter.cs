@@ -8,11 +8,16 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectile, gun;
 
     AttackerSpawner myLaneSpawner;
+    Animator animator;
+
+    // animator consts
+    const string ANIMATOR_VAR_IS_ATTACKING = "isAttacking";
 
     // Start is called before the first frame update
     void Start()
     {
         SetLaneSpawner();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,11 +25,11 @@ public class Shooter : MonoBehaviour
     {
         if (IsAttackerInLane())
         {
-            Debug.Log("Fire!");
+            animator.SetBool(ANIMATOR_VAR_IS_ATTACKING, true);
         }
         else
         {
-
+            animator.SetBool(ANIMATOR_VAR_IS_ATTACKING, false);
         }
     }
 
