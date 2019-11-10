@@ -6,7 +6,7 @@ public class AttackerSpawner : MonoBehaviour
 {
     [SerializeField] float minSpawnDelay = 1;
     [SerializeField] float maxSpawnDelay = 5;
-    [SerializeField] Attacker attackerPrefab;
+    [SerializeField] Attacker[] attackers;
     [SerializeField] int laneNumber;
 
     bool spawning = true;
@@ -29,7 +29,8 @@ public class AttackerSpawner : MonoBehaviour
 
     void SpawnAttacker()
     {
-        Attacker attacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
+        int attackerIndex = Random.Range(0, attackers.Length - 1);
+        Attacker attacker = Instantiate(attackers[attackerIndex], transform.position, transform.rotation);
         attacker.transform.parent = transform;
     }
 
