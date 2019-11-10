@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 747255511}
   - component: {fileID: 747255512}
   - component: {fileID: 3187589948694190336}
+  - component: {fileID: 3481512126703147134}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starCost: 100
-  laneNumber: 0
+  laneNumber: 2
 --- !u!95 &747255511
 Animator:
   serializedVersion: 3
@@ -109,6 +110,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0028617}
   m_EdgeRadius: 0
+--- !u!114 &3481512126703147134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896185060911043012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6548e2016f4cd4e4a9fc5f48c584c5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 75
+  deathVFX: {fileID: 0}
 --- !u!1 &7131820333113060227
 GameObject:
   m_ObjectHideFlags: 0
