@@ -6,6 +6,11 @@ public class Attacker : MonoBehaviour
 {
     float CurrentSpeed = 0;
 
+    GameObject currentTarget;
+
+    // animator consts
+    const string ANIMATOR_VAR_IS_ATTACKING = "isAttacking";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +26,11 @@ public class Attacker : MonoBehaviour
     public void SetCurrentSpeed(float Speed)
     {
         this.CurrentSpeed = Speed;
+    }
+
+    public void Attack(GameObject target)
+    {
+        GetComponent<Animator>().SetBool(ANIMATOR_VAR_IS_ATTACKING, true);
+        currentTarget = target;
     }
 }
