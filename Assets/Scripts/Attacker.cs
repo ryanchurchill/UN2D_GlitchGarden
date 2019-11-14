@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    [SerializeField] int attackDamage = 0;
+
     float CurrentSpeed = 0;
 
     GameObject currentTarget;
@@ -45,7 +47,7 @@ public class Attacker : MonoBehaviour
         currentTarget = null;
     }
 
-    public void StrikeCurrentTarget(float damage)
+    public void StrikeCurrentTarget()
     {
         if (!currentTarget)
         {
@@ -55,7 +57,12 @@ public class Attacker : MonoBehaviour
         Health health = currentTarget.GetComponent<Health>();
         if (health)
         {
-            health.DealDamage(damage);
+            health.DealDamage(attackDamage);
         }
+    }
+
+    public int GetAttackDamage()
+    {
+        return attackDamage;
     }
 }
