@@ -21,6 +21,11 @@ public class AttackerSpawner : MonoBehaviour
         }
     }
 
+    public void StopSpawning()
+    {
+        spawning = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
