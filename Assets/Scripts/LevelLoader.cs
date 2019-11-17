@@ -15,4 +15,10 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Start Menu");
     }
+
+    public void LoadLoseScreen()
+    {
+        // TODO: better lose screen
+        SceneManager.LoadScene("Start Menu");
+    }
 }

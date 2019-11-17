@@ -14,7 +14,6 @@ public class BaseCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collide!");
         Attacker attacker = collision.gameObject.GetComponent<Attacker>();
         if (attacker)
         {

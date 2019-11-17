@@ -27,6 +27,14 @@ public class HealthDisplay : MonoBehaviour
         health -= damage;
         UpdateDisplay();
 
-        // TODO: die
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        FindObjectOfType<LevelLoader>().LoadLoseScreen();
     }
 }
