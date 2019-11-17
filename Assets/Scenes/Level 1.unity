@@ -577,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545080485}
   - component: {fileID: 545080486}
+  - component: {fileID: 545080487}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -649,12 +650,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.583
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &545080487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545080484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8237c61ed98b11149a5878860c7a31af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTime: 10
 --- !u!1 &606423415
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +754,7 @@ GameObject:
   - component: {fileID: 692373420}
   - component: {fileID: 692373422}
   - component: {fileID: 692373421}
+  - component: {fileID: 692373423}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -779,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9716981, g: 0.9324458, b: 0.2062567, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -803,6 +818,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692373419}
   m_CullTransparentMesh: 0
+--- !u!95 &692373423
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692373419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c97f54a0ed909948a0db84716c9d876, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &711005963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1035,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a38079f75ae703448a70ee9afa63993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
 --- !u!114 &912562888
 MonoBehaviour:
   m_ObjectHideFlags: 0
