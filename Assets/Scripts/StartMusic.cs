@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: rename to MusicPlayer
 public class StartMusic : MonoBehaviour
 {
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefsController.GetMasterVolume();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetVolume(float volume)
     {
-        
+        audioSource.volume = volume;
     }
 }
