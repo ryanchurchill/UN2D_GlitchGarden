@@ -35,6 +35,6 @@ public class HealthDisplay : MonoBehaviour
 
     private void Die()
     {
-        FindObjectOfType<LevelLoader>().LoadLoseScreen();
+        FindObjectOfType<LevelController>().HandleLoseCondition();
     }
 }

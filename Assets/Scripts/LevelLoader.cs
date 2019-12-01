@@ -9,35 +9,49 @@ public class LevelLoader : MonoBehaviour
     const int START_MENU_INDEX = 1;
     const int FIRST_LEVEL_INDEX = 2;
 
-    int currentSceneIndex = 0;
+    int currentSceneIndex;
 
-    public void LoadStartMenu()
+    private void Start()
     {
-        StartCoroutine(LoadStartMenuWithDelay());
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    private IEnumerator LoadStartMenuWithDelay()
+    public void LoadStartMenuWithDelay()
+    {
+        StartCoroutine(LoadStartMenuWithDelayCr());
+    }
+
+    private IEnumerator LoadStartMenuWithDelayCr()
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(START_MENU_INDEX);
-        currentSceneIndex = START_MENU_INDEX;
     }
 
     public void LoadLoseScreen()
     {
         // TODO: better lose screen
         SceneManager.LoadScene(START_MENU_INDEX);
-        currentSceneIndex = START_MENU_INDEX;
     }
 
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(FIRST_LEVEL_INDEX);
-        currentSceneIndex = FIRST_LEVEL_INDEX;
     }
 
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    public void ReloadLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void LoadStartMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(START_MENU_INDEX);
     }
 }
