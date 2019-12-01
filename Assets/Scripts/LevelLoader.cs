@@ -7,7 +7,8 @@ public class LevelLoader : MonoBehaviour
 {
     const int SPLASH_SCREEN_INDEX = 0;
     const int START_MENU_INDEX = 1;
-    const int FIRST_LEVEL_INDEX = 2;
+    const int OPTIONS_INDEX = 2;
+    const int FIRST_LEVEL_INDEX = 3;
 
     int currentSceneIndex;
 
@@ -31,6 +32,11 @@ public class LevelLoader : MonoBehaviour
     {
         // TODO: better lose screen
         SceneManager.LoadScene(START_MENU_INDEX);
+    }
+
+    public void LoadOptionsScreen()
+    {
+        SceneManager.LoadScene(OPTIONS_INDEX);
     }
 
     public void LoadFirstLevel()
