@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
+    const string DEFENDER_PARENT_NAME = "Defenders";
+    
     Defender defenderPrefab;
+    GameObject defenderParent;
+
+    private void Start()
+    {
+        defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+        if (!defenderParent)
+        {
+            defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+        }
+    }
 
     public void SetSelectedDefender(Defender defenderPrefabToSelect)
     {
@@ -34,6 +46,7 @@ public class DefenderSpawner : MonoBehaviour
     {
         Defender newDefender = Instantiate(defenderPrefab, SpawnLocation, Quaternion.identity) as Defender;
         newDefender.SetLaneNumber((int)SpawnLocation.y);
+        newDefender.transform.parent = defenderParent.transform;
     }
 
     private void AttemptToPlaceDefenderAt(Vector2 gridPos)

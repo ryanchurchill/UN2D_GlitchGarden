@@ -5,10 +5,13 @@ using UnityEngine;
 // part of Defender
 public class Shooter : MonoBehaviour
 {
+    const string PROJECTILE_PARENT_NAME = "Projectiles";
+    
     [SerializeField] GameObject projectile, gun;
 
     AttackerSpawner myLaneSpawner;
     Animator animator;
+    GameObject projectileParent;
 
     // animator consts
     const string ANIMATOR_VAR_IS_ATTACKING = "isAttacking";
@@ -18,6 +21,12 @@ public class Shooter : MonoBehaviour
     {
         SetLaneSpawner();
         animator = GetComponent<Animator>();
+
+        projectileParent = GameObject.Find(PROJECTILE_PARENT_NAME);
+        if (!projectileParent)
+        {
+            projectileParent = new GameObject(PROJECTILE_PARENT_NAME);
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +44,8 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
     {
-        Instantiate(projectile, gun.transform.position, gun.transform.rotation);
+        GameObject spawnedProjectile = Instantiate(projectile, gun.transform.position, gun.transform.rotation);
+        spawnedProjectile.transform.parent = projectileParent.transform;
     }
 
     private void SetLaneSpawner()
